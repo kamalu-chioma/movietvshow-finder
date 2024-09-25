@@ -76,7 +76,7 @@ Use a systematic approach to branching:
 ## Conclusion
 Follow these guidelines to maintain a smooth workflow and contribute effectively to the project. Adherence to these rules ensures that our codebase remains organized and that all contributions are integrated seamlessly.
 
-###TLDR (PLEASE READ EVERYTHING ABOVE, LOL):
+### TLDR (PLEASE READ EVERYTHING ABOVE, LOL):
 
 - Setup: Clone the repo, install dependencies, and start the server.
   
