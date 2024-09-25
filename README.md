@@ -75,12 +75,18 @@ Use a systematic approach to branching:
 
 ## Conclusion
 Follow these guidelines to maintain a smooth workflow and contribute effectively to the project. Adherence to these rules ensures that our codebase remains organized and that all contributions are integrated seamlessly.
-###TLDR (PLEASE READ EVERYTHING ABOVE):
-Setup: Clone the repo, install dependencies, and start the server.
-Commit Changes: Write clear commit messages with the change type and a brief summary.
-Branching: Use main for production, dev for integration, feature branches for new features, and fix branches for fixes.
-Updating: Regularly pull from dev to stay updated.
-Integration:
+
+###TLDR (PLEASE READ EVERYTHING ABOVE, LOL):
+
+- Setup: Clone the repo, install dependencies, and start the server.
+  
+- Commit Changes: Write clear commit messages with the change type and a brief summary.
+
+- Branching: Use main for production, dev for integration, feature branches for new features, and fix branches for fixes.
+  
+- Updating: Regularly pull from dev to stay updated.
+
+- Integration:
 •	Push changes to your branch.
 •	Open a pull request to merge into dev.
 •	As the repo owner, I approve all merges to ensure quality and consistency.
