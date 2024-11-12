@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import styles from '../styles/chatbot.module.css'
+import styles from './chatbot.module.css'
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)

@@ -4,7 +4,7 @@ import React, { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import './styles/globals.css';
 import Chatbot from './components/Chatbot';
-import styles from './styles/Layout.module.css';
+import styles from './layout.module.css';
 import Footer from './components/Footer';
 import { WishlistProvider } from './context/WishlistContext';
 
