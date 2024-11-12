@@ -1,11 +1,10 @@
-// components/Footer.tsx
-
 import React from 'react';
+import styles from '../styles/Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center p-4">
-         © 2025 Movie/TV Finder App | Privacy Policy | Terms of Service
+    <footer className={styles.footer}>
+      <p>&copy; 2024 Movie/TV Finder. All rights reserved.</p>
     </footer>
   );
 };

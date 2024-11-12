@@ -1,0 +1,21 @@
+/* app/watchlist/watchlist.css */
+
+.container {
+    padding: 20px;
+  }
+  
+  .wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; /* Spacing between grid items */
+    margin-top: 20px;
+  }
+  
+  .wishlist-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  
