@@ -2,10 +2,10 @@
 "use client";
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation'; // Correct import for Next.js useSearchParams
-import { fetchMovies } from '../utils/tmdb'; // Import the utility to fetch movies from TMDb
-import Image from 'next/image'; // Import Image component from next/image
-import { useWishlist } from '../context/WishlistContext'; // Import Wishlist context
+import { useSearchParams } from 'next/navigation';
+import { fetchMovies } from '../utils/tmdb';
+import Image from 'next/image';
+import { useWishlist } from '../context/WishlistContext';
 
 interface Movie {
   id: number;
@@ -15,29 +15,31 @@ interface Movie {
   vote_average: number;
 }
 
-// Separate component to handle fetching and displaying movies
-const SearchResultsContent = ({ query }: { query: string }) => {
+const SearchResults = () => {
+  const searchParams = useSearchParams();
+  const query = searchParams.get('query') || '';
+  const { addToWishlist } = useWishlist(); // Access wishlist function
+
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { addToWishlist } = useWishlist(); // Access addToWishlist from context
 
+  // Fetch movies when query changes
   useEffect(() => {
     const searchMovies = async () => {
+      if (!query) return;
       setLoading(true);
       setError(null);
 
-      if (query) {
-        try {
-          const results = await fetchMovies(query);
-          setMovies(results);
-        } catch (err) {
-          console.error(err);
-          setError('Failed to fetch movies.');
-        }
+      try {
+        const results = await fetchMovies(query);
+        setMovies(results);
+      } catch (err) {
+        console.error("Error fetching movies:", err);
+        setError('Failed to fetch movies.');
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     };
 
     searchMovies();
@@ -65,7 +67,10 @@ const SearchResultsContent = ({ query }: { query: string }) => {
               )}
               <p>Release Date: {movie.release_date}</p>
               <p>Rating: {movie.vote_average}</p>
-              <button onClick={() => addToWishlist(movie)} className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg">
+              <button
+                onClick={() => addToWishlist(movie)}
+                className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg"
+              >
                 Add to Watchlist
               </button>
             </div>
@@ -78,15 +83,10 @@ const SearchResultsContent = ({ query }: { query: string }) => {
   );
 };
 
-const SearchResults = () => {
-  const searchParams = useSearchParams();
-  const query = searchParams.get('query') || '';
-
+export default function Page() {
   return (
     <Suspense fallback={<div>Loading search results...</div>}>
-      <SearchResultsContent query={query} />
+      <SearchResults />
     </Suspense>
   );
-};
-
-export default SearchResults;
+}
