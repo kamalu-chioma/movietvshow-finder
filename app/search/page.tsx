@@ -1,7 +1,7 @@
-// app/search-results/page.tsx
+// app/search/page.tsx
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation'; // Correct import for Next.js useSearchParams
 import { fetchMovies } from '../utils/tmdb'; // Import the utility to fetch movies from TMDb
 import Image from 'next/image'; // Import Image component from next/image
@@ -15,15 +15,13 @@ interface Movie {
   vote_average: number;
 }
 
-const SearchResults = () => {
+// Separate component to handle fetching and displaying movies
+const SearchResultsContent = ({ query }: { query: string }) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-  const query = searchParams.get('query');
   const { addToWishlist } = useWishlist(); // Access addToWishlist from context
 
-  // Fetch movies based on the search query
   useEffect(() => {
     const searchMovies = async () => {
       setLoading(true);
@@ -45,12 +43,12 @@ const SearchResults = () => {
     searchMovies();
   }, [query]);
 
+  if (loading) return <p>Loading movies...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+
   return (
     <div className="search-results">
       <h1>Search Results for &quot;{query}&quot;</h1>
-
-      {loading && <p>Loading movies...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
 
       {movies.length > 0 ? (
         <div className="movie-grid">
@@ -74,9 +72,20 @@ const SearchResults = () => {
           ))}
         </div>
       ) : (
-        !loading && <p>No results found</p>
+        <p>No results found</p>
       )}
     </div>
+  );
+};
+
+const SearchResults = () => {
+  const searchParams = useSearchParams();
+  const query = searchParams.get('query') || '';
+
+  return (
+    <Suspense fallback={<div>Loading search results...</div>}>
+      <SearchResultsContent query={query} />
+    </Suspense>
   );
 };
 
