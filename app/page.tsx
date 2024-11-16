@@ -83,7 +83,7 @@ const Home = () => {
       const normalizedScore = wishlist.length > 0 ? totalSimilarity / wishlist.length : 0;
     
       // Adding a small random variation to avoid identical scores
-      return (normalizedScore * 80) + Math.random() * 5; // Scores now range from 0 to slightly below 100
+      return `${(normalizedScore * 80 + Math.random() * 5).toFixed(2)}%`; 
     };
     
     
@@ -188,7 +188,7 @@ const handleLogout = () => {
                   )}
                   <p>Release Date: {movie.release_date}</p>
                   <p>Rating: {movie.vote_average}</p>
-                  <p>Similarity Score: {movie.similarityScore.toFixed(2)}</p>
+                  <p>Match: {movie.similarityScore.toFixed(2)}</p>
                   <button onClick={() => handleAddToWishlist(movie)}>
                     Add to Watchlist
                   </button>
