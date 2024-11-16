@@ -4,7 +4,7 @@ Welcome to the Movie & TV Show Finder application! This app allows users to disc
 
 ## Application Link
 
-Access the live application here: [Movie & TV Show Finder](https://movietvshow-finder-git-cjk-chiomas-projects-05e33234.vercel.app/)
+Access the live application here: [Movie & TV Show Finder](https://movietvshow-finder.vercel.app/)
 
 ## Features
 
@@ -12,6 +12,7 @@ Access the live application here: [Movie & TV Show Finder](https://movietvshow-f
 - **Image Search**: Upload a movie flier to search for a movie. The app will identify the movie and return information about it.
 - **Watchlist**: Add movies to your watchlist after logging in.
 - **Personalized Recommendations**: Based on movies in your watchlist, the homepage provides recommendations for similar movies using cosine similarity.
+- **AI movie finder**: Use the AI chat as your general movie chatterbot, it will help you with movies, plots, recommendations, and the rest... just stick to only movie-related convos 
 
 ## Getting Started
 
