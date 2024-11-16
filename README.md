@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie & TV Show Finder
+
+Welcome to the Movie & TV Show Finder application! This app allows users to discover trending movies, search for movies by uploading a movie flier, and maintain a personalized watchlist. Built with Next.js, this application uses an image search API to identify movies based on uploaded images and recommends similar movies using cosine similarity based on the user’s watchlist.
+
+## Application Link
+
+Access the live application here: [Movie & TV Show Finder](https://movietvshow-finder.vercel.app/)
+
+## Features
+
+- **Trending Movies**: View trending movies directly on the homepage.
+- **Image Search**: Upload a movie flier to search for a movie. The app will identify the movie and return information about it.
+- **Watchlist**: Add movies to your watchlist after logging in.
+- **Personalized Recommendations**: Based on movies in your watchlist, the homepage provides recommendations for similar movies using cosine similarity.
 
 ## Getting Started
 
-First, run the development server:
+To start using the Movie & TV Show Finder, follow these steps:
+
+1. **Visit the App**: Go to [https://movietvshow-finder.vercel.app/](https://movietvshow-finder.vercel.app/).
+2. **Log In**: Use the following test credentials:
+   - **Username**: Pelumi
+   - **Password**: pass
+3. **Explore**:
+   - Upload a movie flier to find information on a specific movie.
+   - Add movies to your watchlist to receive personalized recommendations.
+
+## Tech Stack
+
+- **Frontend**: Next.js
+- **Backend API**: Image search API for movie identification
+
+## Running Locally
+
+To run the project locally, clone the repository and install dependencies:
 
 ```bash
+git clone <repository-url>
+cd movie-tv-show-finder
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
