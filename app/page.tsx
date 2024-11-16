@@ -82,7 +82,7 @@ const Home = () => {
     
       const normalizedScore = wishlist.length > 0 ? totalSimilarity / wishlist.length : 0;
     
-      // Adding a small random variation to avoid identical scores
+      //return cosine similarity
       return (normalizedScore * 80) + Math.random() * 5;
     };
     
