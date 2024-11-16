@@ -4,7 +4,7 @@ Welcome to the Movie & TV Show Finder application! This app allows users to disc
 
 ## Application Link
 
-Access the live application here: [Movie & TV Show Finder](https://movietvshow-finder.vercel.app/)
+Access the live application here: [Movie & TV Show Finder](https://movietvshow-finder-git-cjk-chiomas-projects-05e33234.vercel.app/)
 
 ## Features
 
