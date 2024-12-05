@@ -1,4 +1,3 @@
-// components/Login.tsx
 "use client";
 
 import React, { useState } from 'react';
@@ -10,14 +9,15 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
-  const validUsername = 'Pelumi';
+  // Valid usernames and password
+  const validUsers = ['Chioma', 'Rukshan', 'Cecil', 'User', 'Pelumi'];
   const validPassword = 'pass';
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username === validUsername && password === validPassword) {
+    if (validUsers.includes(username) && password === validPassword) {
       localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('username', validUsername);
+      localStorage.setItem('username', username);
       router.push('/');
     } else {
       setErrorMessage('Invalid username or password.');
