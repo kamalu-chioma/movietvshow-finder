@@ -39,7 +39,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <WishlistProvider> {/* Provides global wishlist state */}
           <div className={styles.layout}>
             <header className={styles.header}>
-              <h1>Movie/TV Finder</h1>
+              {/* Logo Image */}
+              <img 
+                src="/images/movies-ai-finder-high-resolution-logo.png" 
+                alt="Movie/TV Finder Logo" 
+                className={styles.logo} 
+              />
               <nav className={styles.nav}>
                 <a href="/" className={styles.link}>Home</a>
                 <a href="/watchlist" className={styles.link}>Watchlist</a>
@@ -60,3 +65,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
