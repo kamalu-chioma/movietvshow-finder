@@ -30,7 +30,7 @@
   }
 
 .logo {
-  height: 20px; /* Set the height to be smaller */
+  height: 50px; /* Set the height to be smaller */
   width: auto;  /* Maintain aspect ratio */
   margin-right: 20px; /* Space between logo and nav */
 }
