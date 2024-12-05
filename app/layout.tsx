@@ -1,8 +1,9 @@
+// components/Layout.js
 import React, { CSSProperties, ReactNode } from 'react';
-import Footer from './Footer';  // assuming this is in the components directory
+import Footer from './Footer';
 
 interface LayoutProps {
-  children: ReactNode;
+  children: ReactNode;  
 }
 
 const Layout = ({ children }: LayoutProps) => {
@@ -31,14 +32,13 @@ const Layout = ({ children }: LayoutProps) => {
   const linkStyle: CSSProperties = {
     color: 'white',
     marginLeft: '20px',
-    textDecoration: 'none'
+    textDecoration: 'none'  
   };
 
   return (
     <div style={layoutStyle}>
       <header style={headerStyle}>
-        {/* Logo Image */}
-        <img src="/images/movies-ai-finder-high-resolution-logo.png" alt="Logo" style={{ width: 'auto', height: '40px' }} />
+        <h1>Movie/TV Finder</h1>
         <nav style={navStyle}>
           <a href="#" style={linkStyle}>Home</a>
           <a href="#" style={linkStyle}>Watchlist</a>  
